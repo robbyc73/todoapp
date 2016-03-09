@@ -1,0 +1,17 @@
+{% extends "::base.html.twig" %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block body %}
+    <div class="ui one column stackable page grid" style="margin-top: 150px;">
+        <div class="column twelve wide">
+            <form action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }} method="POST" class="ui form">
+                {{ form_widget(form) }}
+                <div style="margin-top: 20px;">
+                    <input class="ui button" type="submit" value="{{ 'registration.submit'|trans }}" />
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock body %}
+

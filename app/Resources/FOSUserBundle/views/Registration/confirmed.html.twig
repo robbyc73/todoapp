@@ -1,0 +1,13 @@
+{% extends "::base.html.twig" %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block body %}
+    <div class="ui one column stackable page grid" style="margin-top: 150px;">
+        <div class="column twelve wide">
+            <p>{{ 'registration.confirmed'|trans({'%username%': user.username}) }}</p>
+            <p><a href="{{ path('homepage') }}">Back to homepage</a></p>
+        </div>
+    </div>
+{% endblock body %}
+

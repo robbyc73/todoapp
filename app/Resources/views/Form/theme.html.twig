@@ -1,0 +1,51 @@
+{% use 'form_div_layout.html.twig' %}
+
+{%- block form -%}
+
+ {{- form_start(form, { attr: { class: 'ui form small', novalidate: true }}) -}}
+
+ {{- form_widget(form) -}}
+
+ {{- form_end(form) -}}
+
+{%- endblock form -%}
+
+{%- block form_row %}
+
+ <div class="field">
+
+ {{ form_label(form) }}
+
+ {{ form_errors(form) }}
+
+ {{ form_widget(form) }}
+
+ </div>
+
+{% endblock form_row %}
+
+{%- block date_widget -%}
+
+ <div class="inline fields">
+
+ <div class="field">
+
+ {{- form_widget(form.year, { attr: { class: 'ui dropdown' } }) -}}
+
+ </div>
+
+ <div class="field">
+
+ {{- form_widget(form.month, { attr: { class: 'ui dropdown' } }) -}}
+
+ </div>
+
+ <div class="field">
+
+ {{- form_widget(form.day, { attr: { class: 'ui dropdown' } }) -}}
+
+ </div>
+
+ </div>
+
+{%- endblock date_widget -%}

@@ -1,0 +1,12 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_host: localhost
+    database_port: null
+    database_name: todoapp
+    database_user: root
+    database_password: root
+    mailer_transport: gmail
+    mailer_user: robcampbell73@gmail.com
+    mailer_password: 'Googley3s*'
+    secret: 992c13434ffd31258e2d4acf1004b45f404ba732
+   # mailer_host: 127.0.0.1

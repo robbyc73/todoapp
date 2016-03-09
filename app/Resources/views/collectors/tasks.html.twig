@@ -1,0 +1,23 @@
+{# app/Resources/views/collectors/tasks.html.twig #}
+{% extends 'WebProfilerBundle:Profiler:layout.html.twig' %}
+
+{% block toolbar %}
+    {% set icon %}
+    <span>
+            <span class="sf-toolbar-status">{{ collector.tasks }}</span>
+            <span class="sf-toolbar-status sf-toolbar-info-pieceadditional">tasks</span>
+        </span>
+    {% endset %}
+    {% set text %}
+    <div class="sf-toolbar-info-piece">
+        <b>No of tasks</b>
+        <span>{{ collector.tasks }} tasks</span>
+    </div>
+    <div class="sf-toolbar-info-piece">
+        <b>No of tags</b>
+        <span>{{ collector.tags }} tags</span>
+    </div>
+    {% endset %}
+    {# Set the "link" value to false if you do not have a big "panel" section that you want to direct the user to. #}
+    {% include '@WebProfiler/Profiler/toolbar_item.html.twig' with { 'link': false } %}
+{% endblock %}

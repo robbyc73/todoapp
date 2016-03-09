@@ -1,0 +1,23 @@
+{# app/Resources/views/Email/reminder.html.twig #}
+<html>
+<head>
+    <style type="text/css">
+        body { font-family: Helvetica, Arial, sans-serif; }
+    </style>
+</head>
+<body>
+<p>Hello {{ task.username }},</p>
+<p>This is a gently reminder about your task due today:</p>
+<p>
+    <strong>Your task details:</strong>
+</p>
+<p>
+    <strong>{{ task.name }}</strong><br />
+    {{ task.notes }}
+</p>
+<p>
+    Kind Regards,<br />
+    Your To Do App
+</p>
+</body>
+</html>

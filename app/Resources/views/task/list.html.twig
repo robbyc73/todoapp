@@ -1,0 +1,94 @@
+{% extends '::base.html.twig' %}
+
+{% form_theme form 'Form/theme.html.twig' %}
+
+{% block body %}
+
+ <h2 class="ui aligned header">Your tasks list</h2>
+
+ <p class="ui aligned">
+
+ Below you will find your unfinished tasks
+
+ </p>
+<table class="ui blue table">
+
+Twig Templating and Assets Handling
+
+ <thead>
+
+ <tr>
+
+ <th>{{ 'todo_list.name'|trans }}</th>
+
+ <th>{{ 'todo_list.notes'|trans }}</th>
+
+ <th>{{ 'todo_list.tags'|trans }}</th>
+
+ <th>{{ 'todo_list.due'|trans }}</th>
+
+ <th>{{ 'todo_list.actions'|trans }}</th>
+
+ </tr>
+
+ </thead>
+
+ <tbody>
+
+ {% for task in tasks %}
+
+ <tr data-task-id="{{ task.id }}">
+
+ <td>{{ task.name }}</td>
+
+ <td>{{ task.notes }}</td>
+
+ <td>
+
+ {% for tag in task.tags %}
+
+ <span class="ui tag label">{{ tag.name }}</span>
+
+ {% endfor %}
+
+ </td>
+
+ <td>
+
+ {{ task.dueDate is empty ? "" : task.dueDate|date('Y-m-d') }}
+
+ </td>
+
+<td>
+<a href="#" class="action" data-action="edit"><i class="edit icon"></i></a>
+
+ <a href="#" class="action" data-action="finish"><i class="checkmark icon"></i></a>
+
+ <a href="#" class="action" data-action="delete"><i class="remove icon"></i></a>
+</td>
+
+ </tr>
+
+ {% else %}
+
+ <tr>
+
+ <td colspan="4" class="center aligned">
+
+ <h2>There are no unfinished tasks at the moment. Good Job!</h2>
+
+ </td>
+
+ </tr>
+
+ {% endfor %}
+
+ </tbody>
+
+ </table>
+
+<div id="todo_form">
+ {% include 'task/form.html.twig' %}
+ </div>
+{% endblock %}
+
